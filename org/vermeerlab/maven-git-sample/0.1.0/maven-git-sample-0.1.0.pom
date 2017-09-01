@@ -4,7 +4,7 @@
     <groupId>org.vermeerlab</groupId>
     <artifactId>maven-git-sample</artifactId>
     <version>0.1.0</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -45,13 +45,8 @@
                 <configuration>
                     <!-- git commit message -->
                     <message>Maven artifacts for ${project.version}</message>
-
-                    <!-- disable webpage processing -->
                     <noJekyll>true</noJekyll>
-
-                    <!-- matches distribution management repository url above -->
                     <outputDirectory>${project.build.directory}/${git.branchName}</outputDirectory>
-
                     <branch>refs/heads/${git.branchName}</branch>
                     <includes>
                         <include>**/*</include>
@@ -60,12 +55,11 @@
                     <repositoryName>${git.repositoryName}</repositoryName>
                     <repositoryOwner>${git.repositoryOwner}</repositoryOwner>
 
-                    <!-- 履歴を残す。これがないと、直近バージョンしかrepositoryに残らない -->
+                    <!-- true：履歴を残す　false：直近バージョンのみ repositoryに残る -->
                     <merge>${git.isMerge}</merge>
 
                 </configuration>
                 <executions>
-                    <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
                     <execution>
                         <goals>
                             <goal>site</goal>
