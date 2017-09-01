@@ -17,17 +17,6 @@
         <git.isMerge>true</git.isMerge>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>github-maven</id>
-            <url>https://raw.github.com/${git.repositoryOwner}/${git.repositoryName}/${git.branchName}/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
-
     <build>
         <plugins>
             <plugin>
