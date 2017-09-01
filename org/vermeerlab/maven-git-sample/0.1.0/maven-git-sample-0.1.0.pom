@@ -14,7 +14,7 @@
         <git.branchName>mvn-repo</git.branchName>
         <git.repositoryOwner>vermeer-1977</git.repositoryOwner>
         <git.repositoryName>maven</git.repositoryName>
-        <git.isMerge>true</git.isMerge>
+        <git.isMerge>false</git.isMerge>
     </properties>
 
     <build>
